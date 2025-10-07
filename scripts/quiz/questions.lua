@@ -1,3 +1,11 @@
+-- If an option is commented out it is,
+-- because at present ONB only allows up to 3 options for
+-- quiz player without weird work arounds.
+
+-- If an entire entry is commented out it is either because it required a feature this script
+-- does not currently support - OR - Answers were found to betoo long and break
+-- Net/Async.quiz_player in v2.0/2.1
+
 -- Tag options as of present
 -- {
 -- "General Knowledge",
@@ -7,6 +15,8 @@
 -- "Game Knowledge",
 -- "Chip Knowledge",
 -- "Character Knowledge",
+-- "Riddle"
+-- "Custom"
 -- }
 
 local questionBank = {
@@ -237,7 +247,7 @@ local questionBank = {
 
 
     --{
-    --    tags = {},
+    --    tags = {"BN2"},
     --    question = "What distinguishes the Marine Station kiosk?",
     --    options = {
     --        "The Selection",
@@ -247,7 +257,7 @@ local questionBank = {
     --    answer = 0
     --},
     {
-        tags = {},
+        tags = { "BN2" },
         question = "How many tents are in Okuden Valley Campground?",
         options = {
             "2",
@@ -257,7 +267,7 @@ local questionBank = {
         answer = 1
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Where did the Marine Harbor Cafe waitress work before?",
         options = {
             "Restaurant",
@@ -267,7 +277,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Choose cannons in A, B, and C order, and what do you get?",
         options = {
             "Omega Cannon",
@@ -277,7 +287,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the popular announcer Ribitta's TV show name?",
         options = {
             "DNN News",
@@ -287,7 +297,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the name of the quick, rat-shaped virus?",
         options = {
             "Ratton",
@@ -297,7 +307,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What advance occurs when Spreaders are in alphabet-order?",
         options = {
             "PwdCanon",
@@ -307,7 +317,7 @@ local questionBank = {
         answer = 1
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What shape is Okuden Valley's air-monitoring system?",
         options = {
             "Guardian",
@@ -317,7 +327,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Where is the statue of the ancient Melpos god of war?",
         options = {
             "Net Castle",
@@ -327,7 +337,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question =
         "A rooster stood on the peak of a barn. It laid an egg. Which side did the egg roll down? The left side... or the right?",
         options = {
@@ -338,7 +348,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Which has a more powerful attack? LilBomb or HeatSprd?",
         options = {
             "LilBomb",
@@ -348,7 +358,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the name of SnakeMan's operator?",
         options = {
             "Mrs. Salmonella",
@@ -358,7 +368,7 @@ local questionBank = {
         answer = 1
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What wood does the bath in ACDC Town's largest house use?",
         options = {
             "Hackberry",
@@ -368,7 +378,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's in the trashcan in underground Netopia?",
         options = {
             "Teddy bear",
@@ -378,7 +388,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's ShadowMan's element?",
         options = {
             "Aqua",
@@ -388,7 +398,7 @@ local questionBank = {
         answer = 1
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the virus that shoots CannonBalls from its mouth?",
         options = {
             "CannBall",
@@ -398,7 +408,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the combined attack of ThunManV3, Navi+40 & Navi+20?",
         options = {
             "190",
@@ -408,7 +418,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Who is a former WWW operator?",
         options = {
             "Arashi",
@@ -419,7 +429,7 @@ local questionBank = {
     },
 
     -- {
-    --     tags = {},
+    --     tags = {"BN2"},
     --     question = "What's the name of MagnetMan's operator Gauss's brother?",
     --     options = {
     --         "Anpere Gauss",
@@ -430,7 +440,7 @@ local questionBank = {
     -- },
 
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Of these Navis, who is vulnerable to Wood attacks?",
         options = {
             "MagnetMan",
@@ -440,7 +450,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the temperature of the Netopia hotel fridge?",
         options = {
             "-3 degrees C",
@@ -450,7 +460,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's the name of the popular robot cartoon in Netopia?",
         options = {
             "Rondam",
@@ -460,7 +470,7 @@ local questionBank = {
         answer = 1
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "How many houses are there in ACDC Town?",
         options = {
             "7",
@@ -470,7 +480,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Which virus has the highest attack power?",
         options = {
             "Swordy2",
@@ -480,7 +490,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's in DenCity but not in Netopia?",
         options = {
             "MetroLine",
@@ -490,7 +500,7 @@ local questionBank = {
         answer = 0
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What area can you enter the Undernet from?",
         options = {
             "NetSq.Ent.",
@@ -500,7 +510,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Where was Quiz?",
         options = {
             "Okuden Valley",
@@ -510,7 +520,7 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "What's Mother Comp1's second keyword?",
         options = {
             "WATCH",
@@ -520,7 +530,7 @@ local questionBank = {
         answer = 1
     },
     {
-        tags = {},
+        tags = { "BN2" },
         question = "Who's the leader of WWW?",
         options = {
             "Gospel",
@@ -965,6 +975,251 @@ local questionBank = {
         },
         answer = 1
     },
+
+    -- BN4
+
+    {
+        tags = { "BN4" },
+        question = "What is the full name for a PET?",
+        options = {
+            "PErsonal Tank",
+            "PErfect Tag",
+            "PErsonal Terminal"
+        },
+        answer = 2
+    },
+
+
+    {
+        tags = { "BN4" },
+        question = "What statue stands in the garden of the mansions in ACDC?",
+        options = {
+            "Elephant",
+            "Duck",
+            "Giraffe"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4" },
+        question = "Which is the largest electrical store in ElecTown",
+        options = {
+            "Jomon Electric",
+            "Comeon Electric",
+            "Yo,Mon! Electric"
+        },
+        answer = 0
+    },
+
+    {
+        tags = { "BN4" },
+        question = "What is the name of the maiden who works at Higsby's?",
+        options = {
+            "Hinako",
+            "Nanako",
+            "Yoyoko"
+        },
+        answer = 1
+    },
+
+    {
+        tags = { "BN4" },
+        question = "What kind of stand is set up next to DenDome?",
+        options = {
+            "Pancake Stand",
+            "Convns Store",
+            "Hotdog Stand"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question = "What goes around the house, and in the house, but never touches the house?",
+        options = {
+            "Air",
+            "Fog",
+            "The Sun",
+            -- "Rain"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question =
+        "I go around in circles, But always straight ahead. Never complain no matter where I am led. What am I?",
+        options = {
+            "Baby",
+            "Mule",
+            "Wheel"
+            -- "Boat"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question =
+        "Brothers and sisters I have none, But that man's father. Is my father's son? Who is it?",
+        options = {
+            "My Son",
+            "My Father",
+            "Me"
+            -- "My Uncle"
+        },
+        answer = 0
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question =
+        "What is put on a table, cut, and never eaten?",
+        options = {
+            "Silence",
+            "Cards",
+            "Air"
+            -- "Water"
+        },
+        answer = 1
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question =
+        "Lovely and round, I shine with pale light, grown in the darkness, a lady's delight. What am I?",
+        options = {
+            "Ring",
+            "Diamond",
+            "Pearl"
+            -- "Baby"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question =
+        "I build up castles. I tear down mountains. I make some men blind. I help others to see. What am I?",
+        options = {
+            "Sand",
+            "Steel",
+            "Glass"
+            -- "Dynamite"
+        },
+        answer = 0
+    },
+
+    {
+        tags = { "BN4", "Riddle", },
+        question =
+        "Lighter than what I am made of, more of me is hidden than is seen. What am I?",
+        options = {
+            "Iceberg",
+            "Star",
+            "Whale"
+            -- "Snail"
+        },
+        answer = 0
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        "How many houses are there in NetFrica?",
+        options = {
+            "3",
+            "4",
+            "5"
+        },
+        answer = 1
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        "How many tusks does Nupopo have?",
+        options = {
+            "2",
+            "3",
+            "4"
+        },
+        answer = 0
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        'What\'s the Attack of the Battle Chip "Boomer1"?',
+        options = {
+            "40",
+            "50",
+            "60"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        'The NetFrica youth club leader wears what color clothes?',
+        options = {
+            "White",
+            "Green",
+            "Brown"
+        },
+        answer = 1
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        'How many big, round platforms are there in the Netopia Area?',
+        options = {
+            "20",
+            "21",
+            "22"
+        },
+        answer = 2
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        'What was score for Lan\'s last math test towards the end of his tournament campaign?',
+        options = {
+            "0 Pts",
+            "35 Pts",
+            "75 Pts"
+        },
+        answer = 1
+    },
+
+    {
+        tags = { "BN4", },
+        question =
+        'What is Lan\'s favorite food?',
+        options = {
+            "Steak",
+            "Hotdogs",
+            "Hamburgers"
+        },
+        answer = 2
+    },
+
+    --   Trick Question
+    --  {
+    --      tags = { "BN4", },
+    --      question =
+    --      'Which of Megamans previous foes were the strongest?',
+    --      options = {
+    --          "MachoManB",
+    --          "KickManO",
+    --          "CyberManZ"
+    --      },
+    --      answer = 3
+    --  },
 
     -- BN5
     {
