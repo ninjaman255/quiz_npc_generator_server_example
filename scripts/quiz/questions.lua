@@ -417,16 +417,18 @@ local questionBank = {
         },
         answer = 2
     },
-    {
-        tags = {},
-        question = "What's the name of MagnetMan's operator Gauss's brother?",
-        options = {
-            "Anpere Gauss",
-            "Hippopotamus Gauss",
-            "Jack Electricity"
-        },
-        answer = 2
-    },
+
+    -- {
+    --     tags = {},
+    --     question = "What's the name of MagnetMan's operator Gauss's brother?",
+    --     options = {
+    --         "Anpere Gauss",
+    --         "Hippopotamus Gauss",
+    --         "Jack Electricity"
+    --     },
+    --     answer = 2
+    -- },
+
     {
         tags = {},
         question = "Of these Navis, who is vulnerable to Wood attacks?",
@@ -691,16 +693,18 @@ local questionBank = {
         },
         answer = 1
     },
-    {
-        tags = { "BN3", },
-        question = "Where is the newest blackboard in the school?",
-        options = {
-            "Classroom 5-A",
-            "Classroom 5-B",
-            "Teacher's Lounge"
-        },
-        answer = 2
-    },
+
+    -- {
+    --     tags = { "BN3", },
+    --     question = "Where is the newest blackboard in the school?",
+    --     options = {
+    --         "Classroom 5-A",
+    --         "Classroom 5-B",
+    --         "Teacher's Lounge"
+    --     },
+    --     answer = 2
+    -- },
+
     {
         tags = { "BN3", },
         question = "How many gold shield displays are in the Principal's Office?",
