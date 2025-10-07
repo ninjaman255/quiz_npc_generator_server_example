@@ -964,6 +964,299 @@ local questionBank = {
             "Marbles"
         },
         answer = 1
+    },
+
+    -- BN5
+    {
+        tags = { "BN5" },
+        question = "What was dropped from the car around the curve?",
+        options = {
+            "Speed",
+            "Luggage",
+            "Its driver"
+        },
+        answer = 0
+    },
+    {
+        tags = { "BN5" },
+        question = "It grinds down hills yet remains unseen.",
+        options = {
+            "Time",
+            "A volcano",
+            "A river"
+        },
+        answer = 0
+    },
+    {
+        tags = { "BN5" },
+        question = "How many steel drums are outside the Old Mine on Oran Isle?",
+        options = {
+            "6",
+            "8",
+            "10"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "What is the combined Atk of Cannon + MiniBomb + WideSwrd?",
+        options = {
+            "150",
+            "170",
+            "230"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "This sport is a bit scary because people hit, throw and steal.",
+        options = {
+            "Soccer",
+            "Baseball",
+            "Croquet"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "In boxing, attacks like a ChamoyEX's are called what?",
+        options = {
+            "A one-two Punch",
+            "Man-to-man defense",
+            "A counter punch"
+        },
+        answer = 0
+    },
+    {
+        tags = { "BN5" },
+        question = "The total Atk of a ChampyEX's right and left punches is...",
+        options = {
+            "50",
+            "60",
+            "70"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "What is the opposite of sweet?",
+        options = {
+            "Sour",
+            "Spicy",
+            "Bitter"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "How many times did I just say 'la'?",
+        options = {
+            "3",
+            "4",
+            "5"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "In which area do Handi appear?",
+        options = {
+            "SciLab1",
+            "SciLab2",
+            "Oran Area2"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "...La la la, la la la. Just kidding. What question is this?",
+        options = {
+            "#7",
+            "#8",
+            "#9"
+        },
+        answer = 0
+    },
+    {
+        tags = { "BN5" },
+        question = "You can jack into which sculpture outside of SciLab?",
+        options = {
+            "The left one",
+            "The middle one",
+            "The right one"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "What does the sculpture portray?",
+        options = {
+            "A man",
+            "A BattleChip",
+            "A PC"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "Influenza is caused by what?",
+        options = {
+            "A germ",
+            "A bacterium",
+            "A virus"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "The dice at Higsby's add up to what number?",
+        options = {
+            "5",
+            "8",
+            "11"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "What is the name of Mr.Famous's Navi?",
+        options = {
+            "HoodMan",
+            "WoodMan",
+            "GridMan"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "How many posts are next to ACDC Town's Metroline station?",
+        options = {
+            "6",
+            "8",
+            "10"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "Of the following chips, which one has the highest Attack?",
+        options = {
+            "MrkCan2",
+            "TankCan1",
+            "M-Cannon"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "What color does blue limitus paper turn when dipped in hydrochloric acid?",
+        options = {
+            "Red",
+            "Blue",
+            "Don't know"
+        },
+        answer = 0
+    },
+    {
+        tags = { "BN5" },
+        question = "7,14,21,28,35,42 What comes next?",
+        options = {
+            "49,55,63,72,89,96",
+            "49,56,63,70,77,84",
+            "45,51,64,72,83,81"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "The visible sides of the dice at Higsby's add up to what number?",
+        options = {
+            "11",
+            "22",
+            "33"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "Which word means the same as 'erase'?",
+        options = {
+            "Dessert",
+            "Delete",
+            "Delicate"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "What is above a female deer and a drop of golden sun?",
+        options = {
+            "You",
+            "Trees",
+            "Me"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "Ryan's friend Kyle went over to Ian's house to play. Who is the subject of this sentence?",
+        options = {
+            "Ryan",
+            "Kyle",
+            "Ian"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "What chip has ID67 in the Data Library?",
+        options = {
+            "Sword",
+            "DrilArm1",
+            "AirHoc"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "What follows Aries, Taurus, and Gemini?",
+        options = {
+            "Pisces",
+            "Scorpio",
+            "Cancer"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question =
+        "A bus is driving down a street. There are 13 people inside, including the driver. 7 get off and 4 get on at the 1st stop. 3 get off and 5 get on at the 2nd stop. How many people are on the bus now?",
+        options = {
+            "11",
+            "12",
+            "13"
+        },
+        answer = 1
+    },
+    {
+        tags = { "BN5" },
+        question = "Which ship is docked in the harbor behind SciLab?",
+        options = {
+            "Princess Miki",
+            "Rodriguez Cartan",
+            "Queen Bohemia"
+        },
+        answer = 2
+    },
+    {
+        tags = { "BN5" },
+        question = "Whose web page does not have a BBS?",
+        options = {
+            "Dex's",
+            "Mayl's",
+            "Yai's"
+        },
+        answer = 1
     }
 }
 
