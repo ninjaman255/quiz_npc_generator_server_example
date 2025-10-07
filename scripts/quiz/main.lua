@@ -74,7 +74,7 @@ local function getAllQuizSpawns()
             local direction = custom_properties["direction"]
             local question_count = custom_properties["question count"]
             local failure_message = custom_properties["failure message"]
-            local complete_message = custom_properties["complete_message"]
+            local complete_message = custom_properties["complete message"]
             local texture_path = bot_sheet_path .. asset_name .. image_suffix
             local anim_path = bot_sheet_path .. asset_name .. anim_suffix
             if (question_count == nil) then
