@@ -129,8 +129,8 @@ local function do_quiz(player_id, quiz_bot)
         local player_pos = Net.get_player_position(player_id)
         local bot_pos = Net.get_bot_position(quiz_bot.bot_id)
         local original_bot_direction = quiz_bot.direction
+        Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
         if (quiz_bot.do_once ~= false and quiz_bot.is_complete[player_id] == nil) then
-            Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
             for i, question in pairs(quiz_bot.bot_questions) do
                 local question_text = question.question
                 local options = question.options
@@ -163,10 +163,9 @@ local function do_quiz(player_id, quiz_bot)
                 quiz_bot.is_complete[player_id] = true
                 return
             end
-            Net.set_bot_direction(quiz_bot.bot_id, original_bot_direction)
         end
+
         if (quiz_bot.do_once ~= true) then
-            Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
             for i, question in pairs(quiz_bot.bot_questions) do
                 local question_text = question.question
                 local options = question.options
@@ -200,18 +199,22 @@ local function do_quiz(player_id, quiz_bot)
                 await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
                 return
             end
-            Net.set_bot_direction(quiz_bot.bot_id, original_bot_direction)
             return
         end
-
-        if (quiz_bot.complete_message == nil) then
-            await(Async.message_player(player_id, default_complete_message, mugshot_texture, mugshot_animation))
-            return
+        if (quiz_bot.is_complete[player_id] ~= nil) then
+            if (quiz_bot.complete_message == nil) then
+                await(Async.message_player(player_id, default_complete_message, mugshot_texture, mugshot_animation))
+                return
+            end
+            await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
         end
-        await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
-        return
+    end).and_then(function()
+        Net.set_bot_direction(quiz_bot.bot_id, quiz_bot.direction)
     end)
 end
+
+
+
 
 
 Net:on("actor_interaction", function(event)
