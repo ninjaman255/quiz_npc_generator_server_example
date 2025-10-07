@@ -59,6 +59,14 @@ local function getAllOfXType(area_id, type)
     return results
 end
 
+function toboolean(str)
+    local bool = false
+    if str == "true" then
+        bool = true
+    end
+    return bool
+end
+
 local function getAllQuizSpawns()
     local area_ids = Net.list_areas()
     local quiz_placeholderName = "Quiz Giver"
@@ -71,6 +79,7 @@ local function getAllQuizSpawns()
                 print(quiz_placeholderName .. " For " .. area_id .. " Must have an asset associated with it")
                 return
             end
+            local do_once = custom_properties['do once']
             local direction = custom_properties["direction"]
             local question_count = custom_properties["question count"]
             local failure_message = custom_properties["failure message"]
@@ -100,7 +109,9 @@ local function getAllQuizSpawns()
                 complete_message = complete_message,
                 asset_name = asset_name,
                 direction = direction,
-                bot_questions = bot_questions
+                bot_questions = bot_questions,
+                do_once = toboolean(do_once),
+                is_complete = {}
             }
         end
     end
@@ -118,38 +129,87 @@ local function do_quiz(player_id, quiz_bot)
         local player_pos = Net.get_player_position(player_id)
         local bot_pos = Net.get_bot_position(quiz_bot.bot_id)
         local original_bot_direction = quiz_bot.direction
-        Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
-        for i, question in pairs(quiz_bot.bot_questions) do
-            local question_text = question.question
-            local options = question.options
-            local correct_answer = question.answer
+        if (quiz_bot.do_once ~= false and quiz_bot.is_complete[player_id] == nil) then
+            Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
+            for i, question in pairs(quiz_bot.bot_questions) do
+                local question_text = question.question
+                local options = question.options
+                local correct_answer = question.answer
 
-            await(Async.message_player(player_id, question_text,
-                mugshot_texture, mugshot_animation
-            ))
-            local result = await(Async.quiz_player(player_id, options[1],
-                options[2],
-                options[3],
-                mugshot_texture, mugshot_animation))
-            if result ~= correct_answer then
-                if (quiz_bot.failure_message == nil) then
-                    await(Async.message_player(player_id, default_fail_message, mugshot_texture, mugshot_animation))
+                await(Async.message_player(player_id, question_text,
+                    mugshot_texture, mugshot_animation
+                ))
+                local result = await(Async.quiz_player(player_id, options[1],
+                    options[2],
+                    options[3],
+                    mugshot_texture, mugshot_animation))
+                if result ~= correct_answer then
+                    if (quiz_bot.failure_message == nil) then
+                        await(Async.message_player(player_id, default_fail_message, mugshot_texture, mugshot_animation))
+                        break
+                    end
+                    await(Async.message_player(player_id, quiz_bot.failure_message, mugshot_texture, mugshot_animation))
                     break
                 end
-                await(Async.message_player(player_id, quiz_bot.failure_message, mugshot_texture, mugshot_animation))
-                break
+                answers = answers + 1
             end
-            answers = answers + 1
-        end
-        if (answers == len) then
-            if (quiz_bot.complete_message == nil) then
-                await(Async.message_player(player_id, default_complete_message, mugshot_texture, mugshot_animation))
+            if (answers == len) then
+                if (quiz_bot.complete_message == nil) then
+                    await(Async.message_player(player_id, default_complete_message, mugshot_texture, mugshot_animation))
+                    quiz_bot.is_complete[player_id] = true
+                    return
+                end
+                await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
+                quiz_bot.is_complete[player_id] = true
                 return
             end
-            await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
+            Net.set_bot_direction(quiz_bot.bot_id, original_bot_direction)
+        end
+        if (quiz_bot.do_once ~= true) then
+            Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
+            for i, question in pairs(quiz_bot.bot_questions) do
+                local question_text = question.question
+                local options = question.options
+                local correct_answer = question.answer
+
+                await(Async.message_player(player_id, question_text,
+                    mugshot_texture, mugshot_animation
+                ))
+                local result = await(Async.quiz_player(player_id, options[1],
+                    options[2],
+                    options[3],
+                    mugshot_texture, mugshot_animation))
+                if result ~= correct_answer then
+                    if (quiz_bot.failure_message == nil) then
+                        await(Async.message_player(player_id, default_fail_message, mugshot_texture,
+                            mugshot_animation))
+                        break
+                    end
+                    await(Async.message_player(player_id, quiz_bot.failure_message, mugshot_texture,
+                        mugshot_animation))
+                    break
+                end
+                answers = answers + 1
+            end
+            if (answers == len) then
+                if (quiz_bot.complete_message == nil) then
+                    await(Async.message_player(player_id, default_complete_message, mugshot_texture,
+                        mugshot_animation))
+                    return
+                end
+                await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
+                return
+            end
+            Net.set_bot_direction(quiz_bot.bot_id, original_bot_direction)
             return
         end
-        Net.set_bot_direction(quiz_bot.bot_id, original_bot_direction)
+
+        if (quiz_bot.complete_message == nil) then
+            await(Async.message_player(player_id, default_complete_message, mugshot_texture, mugshot_animation))
+            return
+        end
+        await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
+        return
     end)
 end
 

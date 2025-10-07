@@ -42,6 +42,7 @@
     <property name="asset name" value="aquaman"/>
     <property name="complete message" value="Good job! You did it. By the way this is a custom complete message instead of the default"/>
     <property name="direction" value="Down Left"/>
+    <property name="do once" type="bool" value="true"/>
     <property name="failure message" value="Oh no! Better luck next time! By the way this is a custom failure message instead of the default"/>
     <property name="question count" type="float" value="5"/>
    </properties>
