@@ -1,6 +1,7 @@
-local Direction                = require("scripts/libs/direction")
-local Questions                = require("scripts/quiz/questions")
-local helpers                  = require('scripts/ezlibs-scripts/helpers')
+local Direction = require("scripts/libs/direction")
+local Questions = require("scripts/quiz/questions")
+local helpers   = require('scripts/ezlibs-scripts/helpers')
+
 
 -- Path information
 local bot_sheet_path           = "/server/assets/ezlibs-assets/eznpcs/sheet/"
