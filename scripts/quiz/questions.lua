@@ -32,6 +32,8 @@
 -- "Character Knowledge",
 -- "Riddle"
 -- "Custom"
+-- "Random"
+-- "General Question"
 -- }
 
 local questionBank = {
@@ -1783,6 +1785,16 @@ local questionBank = {
             "21st Century",
             "30th Century",
             "31st Century"
+        },
+        answer = "2"
+    },
+    {
+        tags = { "Random" },
+        question = "Are you a sentient human being?",
+        options = {
+            "Yes",
+            "No",
+            "Unfortunately"
         },
         answer = "2"
     }
