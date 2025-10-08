@@ -17,7 +17,8 @@
 --       - Delay deterants/Answer timers
 --       - Scoring system (and a way to do a quiz that doesnt stop on incorrect answers need to rethink how I handle setting the bot up to handle different types of configurations.)
 --       - Maybe? Option to do teams, Would need to work out logistics on how this could work.
---         Maybe pick a leader at the start or its random member of each team each turn and theres a deliberation period using BBS?
+--         Maybe pick a leader at the start or its random member (Or event on a cycle) of each team each turn and there's
+--         a deliberation period using BBS?
 --       - Implement currating quizes from specific tags (Filtering by tags)
 
 -- Tag options as of present
