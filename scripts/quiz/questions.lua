@@ -24,16 +24,16 @@
 -- Tag options as of present
 -- {
 -- "General Knowledge",
+-- "General Question",
 -- "BN"#,
 -- "Map Knowledge",
 -- "Lore Knowledge",
 -- "Game Knowledge",
 -- "Chip Knowledge",
 -- "Character Knowledge",
--- "Riddle"
--- "Custom"
+-- "Riddle",
+-- "Custom",
 -- "Random"
--- "General Question"
 -- }
 
 local questionBank = {
@@ -970,16 +970,16 @@ local questionBank = {
         answer = 1
     },
     -- BN4
-    {
-        tags = { "BN4" },
-        question = "What is the full name for a PET?",
-        options = {
-            "PErsonal Tank",
-            "PErfect Tag",
-            "PErsonal Terminal"
-        },
-        answer = 2
-    },
+    -- {
+    --     tags = { "BN4" },
+    --     question = "What is the full name for a PET?",
+    --     options = {
+    --         "PErsonal Tank",
+    --         "PErfect Tag",
+    --         "PErsonal Terminal"
+    --     },
+    --     answer = 2
+    -- },
     {
         tags = { "BN4" },
         question = "What statue stands in the garden of the mansions in ACDC?",
@@ -1243,16 +1243,16 @@ local questionBank = {
         },
         answer = 1
     },
-    {
-        tags = { "BN5" },
-        question = "In boxing, attacks like a ChamoyEX's are called what?",
-        options = {
-            "A one-two Punch",
-            "Man-to-man defense",
-            "A counter punch"
-        },
-        answer = 0
-    },
+    -- {
+    --     tags = { "BN5" },
+    --     question = "In boxing, attacks like a ChamoyEX's are called what?",
+    --     options = {
+    --         "A one-two Punch",
+    --         "Man-to-man defense",
+    --         "A counter punch"
+    --     },
+    --     answer = 0
+    -- },
     {
         tags = { "BN5" },
         question = "The total Atk of a ChampyEX's right and left punches is...",
@@ -1383,16 +1383,16 @@ local questionBank = {
         },
         answer = 0
     },
-    {
-        tags = { "BN5" },
-        question = "7,14,21,28,35,42 What comes next?",
-        options = {
-            "49,55,63,72,89,96",
-            "49,56,63,70,77,84",
-            "45,51,64,72,83,81"
-        },
-        answer = 1
-    },
+    -- {
+    --     tags = { "BN5" },
+    --     question = "7,14,21,28,35,42 What comes next?",
+    --     options = {
+    --         "49,55,63,72,89,96",
+    --         "49,56,63,70,77,84",
+    --         "45,51,64,72,83,81"
+    --     },
+    --     answer = 1
+    -- },
     {
         tags = { "BN5" },
         question = "The visible sides of the dice at Higsby's add up to what number?",
@@ -1788,6 +1788,7 @@ local questionBank = {
         },
         answer = "2"
     },
+    -- Community Sourced Questions
     {
         tags = { "Random" },
         question = "Are you a sentient human being?",

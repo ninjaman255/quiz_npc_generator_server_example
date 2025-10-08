@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="isometric" renderorder="right-down" width="7" height="7" tilewidth="128" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="178">
+<map version="1.10" tiledversion="1.11.2" orientation="isometric" renderorder="right-down" width="7" height="7" tilewidth="128" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="180">
  <properties>
   <property name="Background" value="custom"/>
   <property name="Background Animation" value="/server/assets/bg/darkness.animation"/>
@@ -61,6 +61,33 @@
     <property name="asset name" value="dark-roll"/>
     <property name="direction" value="Down Left"/>
     <property name="question count" type="float" value="100"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="178" type="Quiz NPC" x="160" y="288">
+   <properties>
+    <property name="asset name" value="fireman-bn45"/>
+    <property name="complete message" value="Good job! You did it. By the way this is a custom complete message instead of the default"/>
+    <property name="direction" value="Down Right"/>
+    <property name="do once" type="bool" value="true"/>
+    <property name="failure message" value="Oh no! Better luck next time! By the way this is a custom failure message instead of the default"/>
+    <property name="question count" type="float" value="5"/>
+    <property name="trivia mode" type="bool" value="true"/>
+    <property name="trivia pre-next message" value="Ok, Next question!"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="179" type="Quiz NPC" x="160" y="224">
+   <properties>
+    <property name="asset name" value="shademan-exe5"/>
+    <property name="complete message" value="Thank you for taking part in this trivia night! Please tune in again next time for another insightful experience!"/>
+    <property name="direction" value="Down Right"/>
+    <property name="do once" type="bool" value="true"/>
+    <property name="failure message" value="Oh no! Better luck next time! By the way this is a custom failure message instead of the default"/>
+    <property name="question count" type="float" value="5"/>
+    <property name="trivia mode" type="bool" value="true"/>
+    <property name="trivia pre-next message" value="Ok, Next question!"/>
+    <property name="trivia welcome message" value="Welcome players! I am your host Mr. Quiz King! The one! The only! D3str0y3d255. Without further ado, lets begin our quiz!"/>
    </properties>
    <point/>
   </object>
