@@ -6,6 +6,8 @@
 -- does not currently support - OR - Answers were found to betoo long and break
 -- Net/Async.quiz_player in v2.0/2.1
 
+-- Some questions may need to be adjusted/re-worded to give additional context.
+
 -- Tag options as of present
 -- {
 -- "General Knowledge",
