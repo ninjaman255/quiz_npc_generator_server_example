@@ -8,7 +8,17 @@
 -- OR --
 -- The question was found to be too specific to be of any meaningful use with current implementation.
 
--- TODO: Some questions may need to be adjusted/re-worded to give additional context.
+-- TODOs:
+-- - Some questions may need to be adjusted/re-worded to give additional context.
+-- - Add extra tags for the entries that are currently barebones
+-- - Snatch up ShaDisNX255s YuGiOh code to figure out how he handled turns/preventing players delaying forever on their turns.
+--   Then adjust code to be abit more reusable and/or standalone if needed. Design and implement a system for Team Trivia night
+--       - This should include setting up a lobby with a limit of 8 players (Possibly variable limits)
+--       - Delay deterants/Answer timers
+--       - Scoring system (and a way to do a quiz that doesnt stop on incorrect answers need to rethink how I handle setting the bot up to handle different types of configurations.)
+--       - Maybe? Option to do teams, Would need to work out logistics on how this could work.
+--         Maybe pick a leader at the start or its random member of each team each turn and theres a deliberation period using BBS?
+--       - Implement currating quizes from specific tags (Filtering by tags)
 
 -- Tag options as of present
 -- {
