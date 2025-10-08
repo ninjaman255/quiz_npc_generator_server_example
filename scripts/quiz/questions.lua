@@ -1471,181 +1471,301 @@ local questionBank = {
     {
         tags = { "BN6" },
         question = "What can't you grab with your left hand?",
-        options = { "Left hand", "Right hand", "Pickaxe" },
+        options = {
+            "Left hand",
+            "Right hand",
+            "Pickaxe"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "What does a Mettaur always have?",
-        options = { "Shield", "Pickaxe", "Helmet" },
+        options = {
+            "Shield",
+            "Pickaxe",
+            "Helmet"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Which one of these fish might chase a mouse?",
-        options = { "Catfish", "Goldfish", "Shark" },
+        options = {
+            "Catfish",
+            "Goldfish",
+            "Shark"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "What walks on 4 legs, then 2 legs, then 3 legs?",
-        options = { "Human", "Dog", "Bird" },
+        options = {
+            "Human",
+            "Dog",
+            "Bird"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "What is the color of the tulips in Cyber Academy Class 1-2?",
-        options = { "Red", "Blue", "Yellow" },
+        options = {
+            "Red",
+            "Blue",
+            "Yellow"
+        },
         answer = "2"
     },
     {
         tags = { "BN6" },
         question = "How many trees are in the park?",
-        options = { "8 Trees", "10 Trees", "12 Trees" },
+        options = {
+            "8 Trees",
+            "10 Trees",
+            "12 Trees"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Which letters are in 'Subchip' but not in 'Chip'?",
-        options = { "S and B", "C and A", "U and S" },
+        options = {
+            "S and B",
+            "C and A",
+            "U and S"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "What do you call a small program in a PET?",
-        options = { "Subchip", "MiniProg", "DataBit" },
+        options = {
+            "Subchip",
+            "MiniProg",
+            "DataBit"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "What chip is formed by combining Aqua and Sword?",
-        options = { "AquaSwrd", "WaterBlade", "HydroCut" },
+        options = {
+            "AquaSwrd",
+            "WaterBlade",
+            "HydroCut"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "1 + 3 × 4 + 2 – 3 = ?",
-        options = { "10", "12", "14" },
+        options = {
+            "10",
+            "12",
+            "14"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Difference between Hi-Cannon and Spreader 2 attack power?",
-        options = { "30", "40", "50" },
+        options = {
+            "30",
+            "40",
+            "50"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "How many students in Class 6-A?",
-        options = { "6", "8", "10" },
+        options = {
+            "6",
+            "8",
+            "10"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "What is the seal's name?",
-        options = { "Fanny", "Furry", "Flipper" },
+        options = {
+            "Fanny",
+            "Furry",
+            "Flipper"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "What is the name of the battle game?",
-        options = { "Netbattle", "CyberFight", "DataDuel" },
+        options = {
+            "Netbattle",
+            "CyberFight",
+            "DataDuel"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "How much HP does MiniEnergy restore?",
-        options = { "30", "50", "100" },
+        options = {
+            "30",
+            "50",
+            "100"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Which chip has ID58 in the Data Library?",
-        options = { "MiniBomb", "AirShot", "Cannon" },
+        options = {
+            "MiniBomb",
+            "AirShot",
+            "Cannon"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "How high is Sky Town?",
-        options = { "20,000 Feet", "25,000 Feet", "30,000 Feet" },
+        options = {
+            "20,000 Feet",
+            "25,000 Feet",
+            "30,000 Feet"
+        },
         answer = "2"
     },
     {
         tags = { "BN6" },
         question = "(Sword + Mini Bomb) – (Air Shot + Cannon) = ?",
-        options = { "60", "70", "80" },
+        options = {
+            "60",
+            "70",
+            "80"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "What Navi attacked the Aquarium?",
-        options = { "Diveman", "Swordman", "Numberman" },
+        options = {
+            "Diveman",
+            "Swordman",
+            "Numberman"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "Who am I?",
-        options = { "QuizMaster", "QuizKing", "QuizNavi" },
+        options = {
+            "QuizMaster",
+            "QuizKing",
+            "QuizNavi"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "What is the Attack power of 'Time Bomb 1'?",
-        options = { "100", "150", "200" },
+        options = {
+            "100",
+            "150",
+            "200"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Does a needle have an 'Eye', 'Ear', or 'Mouth'?",
-        options = { "Eye", "Ear", "Mouth" },
+        options = {
+            "Eye",
+            "Ear",
+            "Mouth"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "What does PET stand for?",
-        options = { "Personal Terminal", "Portable Energy Tool", "Program Execution Terminal" },
+        options = {
+            "Personal Terminal",
+            "Portable Energy Tool",
+            "Program Execution Terminal"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "In the Green Town Courtroom Foyer, what is written?",
-        options = { "Justice", "Law", "Truth" },
+        options = {
+            "Justice",
+            "Law",
+            "Truth"
+        },
         answer = "2"
     },
     {
         tags = { "BN6" },
         question = "6, 4, or 8 – Which takes the most strokes to write?",
-        options = { "6", "4", "8" },
+        options = {
+            "6",
+            "4",
+            "8"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Which one of these is not in the Seaside Aquarium?",
-        options = { "Fur Seal", "Penguin", "Jellyfish" },
+        options = {
+            "Fur Seal",
+            "Penguin",
+            "Jellyfish"
+        },
         answer = "0"
     },
     {
         tags = { "BN6" },
         question = "If hit by a Mettaur and Champy attack, how much damage?",
-        options = { "20", "30", "40" },
+        options = {
+            "20",
+            "30",
+            "40"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "How many students are in Class 6-A?",
-        options = { "6", "8", "10" },
+        options = {
+            "6",
+            "8",
+            "10"
+        },
         answer = "1"
     },
     {
         tags = { "BN6" },
         question = "Where is the aquarium's exit?",
-        options = { "Seaside Area 1", "Seaside Area 2", "Seaside Area 3" },
+        options = {
+            "Seaside Area 1",
+            "Seaside Area 2",
+            "Seaside Area 3"
+        },
         answer = "2"
     },
     {
         tags = { "BN6" },
         question = "Which century is it in the game?",
-        options = { "21st Century", "30th Century", "31st Century" },
+        options = {
+            "21st Century",
+            "30th Century",
+            "31st Century"
+        },
         answer = "2"
     }
 }
