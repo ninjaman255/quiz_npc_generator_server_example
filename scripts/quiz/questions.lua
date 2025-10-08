@@ -2,11 +2,13 @@
 -- because at present ONB only allows up to 3 options for
 -- quiz player without weird work arounds.
 
--- If an entire entry is commented out it is either because it required a feature this script
--- does not currently support - OR - Answers were found to betoo long and break
--- Net/Async.quiz_player in v2.0/2.1
+-- If an entire entry is commented out it is either because:
+-- it required a feature this script does not currently support
+-- Answers were found to be too long and break Net/Async.quiz_player in v2.0/2.1
+-- OR --
+-- The question was found to be too specific to be of any meaningful use with current implementation.
 
--- Some questions may need to be adjusted/re-worded to give additional context.
+-- TODO: Some questions may need to be adjusted/re-worded to give additional context.
 
 -- Tag options as of present
 -- {
@@ -493,16 +495,16 @@ local questionBank = {
         },
         answer = 2
     },
-    {
-        tags = { "BN2" },
-        question = "Where was Quiz?",
-        options = {
-            "Okuden Valley",
-            "The Center",
-            "Den Airport"
-        },
-        answer = 2
-    },
+    -- {
+    --     tags = { "BN2" },
+    --     question = "Where was Quiz?",
+    --     options = {
+    --         "Okuden Valley",
+    --         "The Center",
+    --         "Den Airport"
+    --     },
+    --     answer = 2
+    -- },
     {
         tags = { "BN2" },
         question = "What's Mother Comp1's second keyword?",
@@ -1258,16 +1260,16 @@ local questionBank = {
         },
         answer = 1
     },
-    {
-        tags = { "BN5" },
-        question = "How many times did I just say 'la'?",
-        options = {
-            "3",
-            "4",
-            "5"
-        },
-        answer = 1
-    },
+    -- {
+    --     tags = { "BN5" },
+    --     question = "How many times did I just say 'la'?",
+    --     options = {
+    --         "3",
+    --         "4",
+    --         "5"
+    --     },
+    --     answer = 1
+    -- },
     {
         tags = { "BN5" },
         question = "In which area do Handi appear?",
@@ -1278,16 +1280,16 @@ local questionBank = {
         },
         answer = 1
     },
-    {
-        tags = { "BN5" },
-        question = "...La la la, la la la. Just kidding. What question is this?",
-        options = {
-            "#7",
-            "#8",
-            "#9"
-        },
-        answer = 0
-    },
+    -- {
+    --     tags = { "BN5" },
+    --     question = "...La la la, la la la. Just kidding. What question is this?",
+    --     options = {
+    --         "#7",
+    --         "#8",
+    --         "#9"
+    --     },
+    --     answer = 0
+    -- },
     {
         tags = { "BN5" },
         question = "You can jack into which sculpture outside of SciLab?",
@@ -1439,7 +1441,10 @@ local questionBank = {
         answer = 2
     },
     {
-        tags = { "BN5" },
+        tags = {
+            "BN5",
+            "Riddle"
+        },
         question =
         "A bus is driving down a street. There are 13 people inside, including the driver. 7 get off and 4 get on at the 1st stop. 3 get off and 5 get on at the 2nd stop. How many people are on the bus now?",
         options = {
@@ -1660,16 +1665,16 @@ local questionBank = {
         },
         answer = "0"
     },
-    {
-        tags = { "BN6" },
-        question = "Who am I?",
-        options = {
-            "QuizMaster",
-            "QuizKing",
-            "QuizNavi"
-        },
-        answer = "1"
-    },
+    -- {
+    --     tags = { "BN6" },
+    --     question = "Who am I?",
+    --     options = {
+    --         "QuizMaster",
+    --         "QuizKing",
+    --         "QuizNavi"
+    --     },
+    --     answer = "1"
+    -- },
     {
         tags = { "BN6" },
         question = "What is the Attack power of 'Time Bomb 1'?",
@@ -1690,16 +1695,16 @@ local questionBank = {
         },
         answer = "0"
     },
-    {
-        tags = { "BN6" },
-        question = "What does PET stand for?",
-        options = {
-            "Personal Terminal",
-            "Portable Energy Tool",
-            "Program Execution Terminal"
-        },
-        answer = "0"
-    },
+    -- {
+    --     tags = { "BN6" },
+    --     question = "What does PET stand for?",
+    --     options = {
+    --         "Personal Terminal",
+    --         "Portable Energy Tool",
+    --         "Program Execution Terminal"
+    --     },
+    --     answer = "0"
+    -- },
     {
         tags = { "BN6" },
         question = "In the Green Town Courtroom Foyer, what is written?",
