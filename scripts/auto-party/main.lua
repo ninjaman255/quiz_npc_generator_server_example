@@ -1,4 +1,5 @@
 local helpers = require('scripts/ezlibs-scripts/helpers')
+local TblUtils = require('scripts/utils/table-utilities/main')
 local AutoPartyAreas = {}
 local Party = {}
 local MAX_PLAYER_COUNT = 4
@@ -11,6 +12,7 @@ local function setup()
 
     if Net.get_area_custom_property(area_id, "Target Trivia Room") ~= nil then
       AutoPartyAreas[area_id].target_trivia_room = Net.get_area_custom_property(area_id, "Target Trivia Room")
+      AutoPartyAreas[area_id].waiting_room = area_id
       print("The value of Auto Party in "..area_id.. " is true. \n") 
     end 
 		if Net.get_area_custom_property(area_id, "Auto Party") == "true" then
@@ -28,30 +30,35 @@ end
 Net:on("player_area_transfer", function(event)
   local debug = true
   local player_current_area = Net.get_player_area(event.player_id)
-
-  if debug == true then
+  local objects = Net.list_objects(player_current_area)
+  local partyArea = AutoPartyAreas[player_current_area].target_trivia_room
+  if (AutoPartyAreas[player_current_area].waiting_room == player_current_area) then
+  async(function()      
+  local result =  await(Async.message_player(event.player_id, "Party is ready, Prepare to transfer to your Trivia Night Room. Your Host will be D3str0y3d255"))
+    if (result ~= nil) then
+    Async.sleep(1)
     print(event.player_id)
     print(Party)
-    local partyArea = AutoPartyAreas[player_current_area].target_trivia_room
+
     print(partyArea)
     -- startTriviaNight(Party, partyArea)
-    async(function()
-      local player_id = event.player_id
-    await(Async.message_player(event.player_id, "Party is ready, Prepare to transfer to your Trivia Night Room. Your Host will be D3str0y3d255")) 
-    await(Async.sleep(1))
+    local player_id = event.player_id
+
     Net.lock_player_input(event.player_id)
-    Net.transfer_player(event.player_id, partyArea, true, 2, 1, 0, "Up Right")
-    await(Async.sleep(1))
-    await(Async.message_player(event.player_id, "Test"))
-    end)
+    local spawn_objs = TblUtils.GetAllTiledObjOfXType(partyArea, "Player Spot")
+    if (spawn_objs ~= nil) then
+      Net.transfer_player(event.player_id, partyArea, true, spawn_objs[1].x, spawn_objs[1].y, spawn_objs[1].z, "Up Right")
+    end  
+    end
+  end)
   return
-  end
+end
 
   if (AutoPartyAreas[player_current_area][1] == "true") then
     print("Entered an Auto Party Area. \n" .. "player_id : " .. event.player_id .. '\n' .. "area_id : " .. player_current_area)
   end
 
-      if (#Party < MAX_PLAYER_COUNT and Party) then 
+  if (#Party < MAX_PLAYER_COUNT and debug ~= true) then 
     table.insert(Party, tostring(event.player_id))
   end
 end)

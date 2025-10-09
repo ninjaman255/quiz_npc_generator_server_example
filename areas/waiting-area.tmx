@@ -8,7 +8,7 @@
   <property name="Background Vel X" type="float" value="0"/>
   <property name="Background Vel Y" type="float" value="0"/>
   <property name="Name" value="Waiting Area"/>
-  <property name="Song" value="/server/assets/music/episode2.ogg"/>
+  <property name="Song" value="/server/assets/music/WaitingRoom.ogg"/>
   <property name="Target Trivia Room" value="trivia-room"/>
  </properties>
  <tileset firstgid="1" source="../assets/tiles/CheckeredFloor-Quetzen.tsx"/>

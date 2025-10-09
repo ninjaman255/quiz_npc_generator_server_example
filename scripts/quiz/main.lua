@@ -22,7 +22,7 @@ local function getAllQuizSpawns()
     local area_ids = Net.list_areas()
     local quiz_placeholderName = "Quiz Giver"
     for i, area_id in ipairs(area_ids) do
-        local quiz_npcs = GetAllTiledObjOfXType(area_id, "Quiz NPC")
+        local quiz_npcs = TblUtils.GetAllTiledObjOfXType(area_id, "Quiz NPC")
         for i, npc in ipairs(quiz_npcs) do
             local custom_properties = npc.custom_properties
             local asset_name = custom_properties["asset name"]
@@ -45,12 +45,13 @@ local function getAllQuizSpawns()
          --       question_count = default_question_count
          --   end
             local questions = Questions
-            local bot_questions = SelectRandomItemsFromTableClamped(questions, tonumber(question_count))
+            local bot_questions = TblUtils.SelectRandomItemsFromTableClamped(questions, tonumber(question_count))
 
             local trivia_answered_message = custom_properties["trivia pre-next message"]
             local trivia_mode = custom_properties['trivia mode']
-
             local trivia_welcome_message = custom_properties['trivia welcome message']
+            local dont_face = custom_properties['dont face'] 
+            local waiting_room = custom_properties['waiting room']
 
             bot_id = Net.create_bot({
                 name = "",
@@ -70,12 +71,14 @@ local function getAllQuizSpawns()
                 asset_name = asset_name,
                 direction = direction,
                 bot_questions = bot_questions,
-                do_once = StringToBool(do_once),
-                trivia_mode = StringToBool(trivia_mode),
+                do_once = StrUtils.StringToBool(do_once),
+                trivia_mode = StrUtils.StringToBool(trivia_mode),
                 is_complete = {},
                 trivia_answered_message = trivia_answered_message,
                 trivia_welcome_message = trivia_welcome_message,
-                player_scores = {}
+                player_scores = {},
+                dont_face = StrUtils.StringToBool(dont_face),
+                waiting_room = waiting_room
             }
         end
     end
@@ -90,7 +93,9 @@ local function do_quiz(player_id, quiz_bot)
         local len = #quiz_bot.bot_questions
         local player_pos = Net.get_player_position(player_id)
         local bot_pos = Net.get_bot_position(quiz_bot.bot_id)
-        Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
+        if quiz_bot.dont_face ~= true then 
+            Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
+        end
         quiz_bot.player_scores[player_id] = 0
         if (quiz_bot.trivia_mode == true) then
             print("trivia mode is active")
@@ -193,7 +198,9 @@ local function do_quiz(player_id, quiz_bot)
             return
         end
     end).and_then(function()
+        if quiz_bot.dont_face ~= "true" then
         Net.set_bot_direction(quiz_bot.bot_id, quiz_bot.direction)
+        end
     end)
 end
 

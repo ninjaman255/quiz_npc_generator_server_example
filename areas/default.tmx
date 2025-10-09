@@ -7,7 +7,7 @@
   <property name="Background Vel X" type="float" value="0"/>
   <property name="Background Vel Y" type="float" value="0"/>
   <property name="Name" value="Quiz Example"/>
-  <property name="Song" value="/server/assets/music/episode2.ogg"/>
+  <property name="Song" value="/server/assets/music/WaitingRoom.ogg"/>
  </properties>
  <tileset firstgid="1" source="../assets/tiles/CheckeredFloor-Quetzen.tsx"/>
  <tileset firstgid="7" source="../assets/tiles/CheckeredWalls-Half-Cut-Quetzen-Top-Left.tsx"/>

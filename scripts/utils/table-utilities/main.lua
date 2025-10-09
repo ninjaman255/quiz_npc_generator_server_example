@@ -1,4 +1,6 @@
-function GetAllTiledObjOfXType(area_id, type)
+local TblUtils = {}
+
+function TblUtils.GetAllTiledObjOfXType(area_id, type)
     local objects = Net.list_objects(area_id)
     local results = {}
     for i, object_id in next, objects do
@@ -11,7 +13,7 @@ function GetAllTiledObjOfXType(area_id, type)
     return results
 end
 
-function SelectRandomItemsFromTableClamped(tbl, limit)
+function TblUtils.SelectRandomItemsFromTableClamped(tbl, limit)
     -- Check if inputs are valid
     if not tbl or limit <= 0 then return {} end
 
@@ -41,3 +43,5 @@ function SelectRandomItemsFromTableClamped(tbl, limit)
 
     return result
 end
+
+return TblUtils

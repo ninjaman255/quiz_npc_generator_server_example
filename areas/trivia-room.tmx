@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="isometric" renderorder="right-down" width="7" height="7" tilewidth="128" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="186">
+<map version="1.10" tiledversion="1.11.2" orientation="isometric" renderorder="right-down" width="7" height="7" tilewidth="128" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="190">
  <properties>
   <property name="Background" value="custom"/>
   <property name="Background Animation" value="/server/assets/bg/darkness.animation"/>
@@ -7,7 +7,7 @@
   <property name="Background Vel X" type="float" value="0"/>
   <property name="Background Vel Y" type="float" value="0"/>
   <property name="Name" value="Trivia Room"/>
-  <property name="Song" value="/server/assets/music/episode2.ogg"/>
+  <property name="Song" value="/server/assets/music/JeopardyTheme.ogg"/>
  </properties>
  <tileset firstgid="1" source="../assets/tiles/CheckeredFloor-Quetzen.tsx"/>
  <tileset firstgid="7" source="../assets/tiles/CheckeredWalls-Half-Cut-Quetzen-Top-Left.tsx"/>
@@ -21,42 +21,61 @@
  <tileset firstgid="54" source="../assets/tiles/screen-border-full.tsx"/>
  <tileset firstgid="64" source="../assets/tiles/darkarea.tsx"/>
  <tileset firstgid="65" source="../assets/tiles/bn3-bbs.tsx"/>
+ <tileset firstgid="71" source="../assets/tiles/BN2 Shop.tsx"/>
  <layer id="1" name="Tile Layer 1" width="7" height="7">
   <data encoding="csv">
-14,14,14,14,14,14,0,
-14,14,14,14,14,14,0,
-14,14,14,14,14,14,0,
-14,14,14,14,14,14,0,
-14,14,14,14,14,14,0,
-14,14,14,14,14,14,0,
+0,14,14,14,14,0,0,
+0,14,14,14,14,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,
 0,0,0,0,0,0,0
 </data>
  </layer>
  <objectgroup id="2" name="Object Layer 1">
-  <object id="181" x="96" y="96">
+  <object id="181" type="Player Spot" x="117" y="83">
+   <properties>
+    <property name="Spot Number" type="int" value="1"/>
+   </properties>
    <point/>
   </object>
-  <object id="182" x="160" y="96">
+  <object id="182" type="Player Spot" x="165.5" y="82.5">
+   <properties>
+    <property name="Spot Number" type="int" value="2"/>
+   </properties>
    <point/>
   </object>
-  <object id="183" x="224" y="96">
+  <object id="183" type="Player Spot" x="213" y="83">
+   <properties>
+    <property name="Spot Number" type="int" value="3"/>
+   </properties>
    <point/>
   </object>
-  <object id="184" x="288" y="96">
+  <object id="184" type="Player Spot" x="261" y="83">
+   <properties>
+    <property name="Spot Number" type="int" value="4"/>
+   </properties>
    <point/>
   </object>
-  <object id="185" type="Quiz NPC" x="160" y="32">
+  <object id="185" type="Quiz NPC" x="175" y="33">
    <properties>
     <property name="asset name" value="shademan-exe5"/>
     <property name="complete message" value="Thank you for taking part in this trivia night! Please tune in again next time for another insightful experience!"/>
-    <property name="direction" value="Down Right"/>
+    <property name="direction" value="Down Left"/>
+    <property name="dont face" type="bool" value="true"/>
     <property name="failure message" value="Oh no! Better luck next time! By the way this is a custom failure message instead of the default"/>
     <property name="question count" type="float" value="5"/>
     <property name="trivia mode" type="bool" value="true"/>
     <property name="trivia pre-next message" value="Ok, Next question!"/>
     <property name="trivia welcome message" value="Welcome players! I am your host Mr. Quiz King! The one! The only! D3str0y3d255. Without further ado, lets begin our quiz!"/>
+    <property name="waiting room" value="waiting-room"/>
    </properties>
    <point/>
   </object>
+  <object id="186" gid="71" x="99" y="75" width="48" height="41"/>
+  <object id="187" gid="71" x="146.5" y="75.5" width="48" height="41"/>
+  <object id="188" gid="71" x="194" y="76" width="48" height="41"/>
+  <object id="189" gid="71" x="242.5" y="75.5" width="48" height="41"/>
  </objectgroup>
 </map>
