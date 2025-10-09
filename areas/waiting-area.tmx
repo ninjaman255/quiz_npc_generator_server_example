@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="isometric" renderorder="right-down" width="7" height="7" tilewidth="128" tileheight="64" infinite="0" nextlayerid="6" nextobjectid="181">
+ <properties>
+  <property name="Auto Party" type="bool" value="true"/>
+  <property name="Background" value="custom"/>
+  <property name="Background Animation" value="/server/assets/bg/darkness.animation"/>
+  <property name="Background Texture" value="/server/assets/bg/darkness.png"/>
+  <property name="Background Vel X" type="float" value="0"/>
+  <property name="Background Vel Y" type="float" value="0"/>
+  <property name="Name" value="Waiting Area"/>
+  <property name="Song" value="/server/assets/music/episode2.ogg"/>
+  <property name="Target Trivia Room" value="trivia-room"/>
+ </properties>
+ <tileset firstgid="1" source="../assets/tiles/CheckeredFloor-Quetzen.tsx"/>
+ <tileset firstgid="7" source="../assets/tiles/CheckeredWalls-Half-Cut-Quetzen-Top-Left.tsx"/>
+ <tileset firstgid="8" source="../assets/tiles/CheckeredWalls-Half-Cut-Quetzen-Top-Right.tsx"/>
+ <tileset firstgid="9" source="../assets/tiles/home_warp.tsx"/>
+ <tileset firstgid="14" source="../assets/tiles/Black-Floor.tsx"/>
+ <tileset firstgid="38" source="../assets/tiles/SpecialBlockerObject.tsx"/>
+ <tileset firstgid="48" source="../assets/tiles/Floor-Lights.tsx"/>
+ <tileset firstgid="51" source="../assets/tiles/screen-border.tsx"/>
+ <tileset firstgid="52" source="../assets/tiles/crv-filter.tsx"/>
+ <tileset firstgid="54" source="../assets/tiles/screen-border-full.tsx"/>
+ <tileset firstgid="64" source="../assets/tiles/darkarea.tsx"/>
+ <tileset firstgid="65" source="../assets/tiles/bn3-bbs.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="7" height="7">
+  <data encoding="csv">
+0,14,14,14,14,14,0,
+0,14,14,14,14,14,0,
+0,14,14,14,14,14,0,
+0,14,14,14,14,14,0,
+0,14,14,14,14,14,0,
+0,14,14,14,14,14,0,
+0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="2" type="Custom Warp" gid="9" x="208" y="336" width="60" height="32">
+   <properties>
+    <property name="Direction" value="Up Right"/>
+    <property name="Target Area" value="default"/>
+    <property name="Target Object" value="180"/>
+   </properties>
+  </object>
+  <object id="180" type="Board" gid="65" x="-32" y="80" width="80" height="96">
+   <properties>
+    <property name="BBS" type="bool" value="true"/>
+    <property name="Color" type="color" value="#ff55ffff"/>
+    <property name="Name" value="Waiting Area BBS"/>
+    <property name="Post Limit" type="int" value="30"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
