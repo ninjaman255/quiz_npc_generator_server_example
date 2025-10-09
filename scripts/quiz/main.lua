@@ -37,17 +37,17 @@ local function getAllQuizSpawns()
             local complete_message = custom_properties["complete message"]
             local texture_path = bot_sheet_path .. asset_name .. image_suffix
             local anim_path = bot_sheet_path .. asset_name .. anim_suffix
-            if (question_count == nil) then
-                print("question count wasnt defined. Defaulting the value to 3")
-                question_count = default_question_count
-            end
+         --   if (question_count == nil) then
+         --       print("question count wasnt defined. Defaulting the value to 3")
+         --       question_count = default_question_count
+         --   end
             local questions = Questions
             local bot_questions = SelectRandomItemsFromTableClamped(questions, tonumber(question_count))
 
             local trivia_answered_message = custom_properties["trivia pre-next message"]
             local trivia_mode = custom_properties['trivia mode']
             local trivia_welcome_message = custom_properties['trivia welcome message']
-            local trivia_closing_message = custom_properties['trivia closing message']
+
             bot_id = Net.create_bot({
                 name = "",
                 area_id = area_id,
@@ -79,24 +79,10 @@ end
 
 getAllQuizSpawns()
 
--- local function sendExitMessage(
---     setIsCompleteForPlayer,
---     player_id,
---     message,
---     mugshot_texture,
---     mugshot_animation,
---     condition
--- )
---     return async(function()
---
---     end)
--- end
-
 local function do_quiz(player_id, quiz_bot)
     return async(function()
         local mugshot_texture = bot_mug_path .. quiz_bot.asset_name .. image_suffix
         local mugshot_animation = bot_mug_path .. "mug" .. anim_suffix
-        local answers = 0
         local len = #quiz_bot.bot_questions
         local player_pos = Net.get_player_position(player_id)
         local bot_pos = Net.get_bot_position(quiz_bot.bot_id)
@@ -112,7 +98,7 @@ local function do_quiz(player_id, quiz_bot)
                     mugshot_texture, mugshot_animation
                 ))
             end
-
+            local answers = 0
             for i, question in pairs(quiz_bot.bot_questions) do
                 local question_text = question.question
                 local options = question.options
@@ -167,6 +153,7 @@ local function do_quiz(player_id, quiz_bot)
         end
 
         if ((quiz_bot.do_once ~= false and quiz_bot.is_complete[player_id] == nil) or quiz_bot.do_once ~= true) then
+            local answers = 0
             for i, question in pairs(quiz_bot.bot_questions) do
                 local question_text = question.question
                 local options = question.options
@@ -209,6 +196,7 @@ local function do_quiz(player_id, quiz_bot)
                 return
             end
             await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
+            return
         end
     end).and_then(function()
         Net.set_bot_direction(quiz_bot.bot_id, quiz_bot.direction)
