@@ -202,3 +202,12 @@ Net:on("actor_interaction", function(event)
     local quiz_bot = quiz_bots[event.actor_id]
     do_quiz(event.player_id, quiz_bot)
 end)
+
+Net:on("player_area_transfer", function(event)
+    local area_id = Net.get_player_area(event.player_id)
+    local prompter = Net.list_bots(area_id)
+    if (prompter[1] ~= nil) then
+    local quiz_bot = quiz_bots[prompter[1]]
+    do_quiz(event.player_id, quiz_bot)
+    end
+end)
