@@ -31,6 +31,9 @@ local function getAllQuizSpawns()
                 return
             end
             local do_once = custom_properties['do once']
+            if (do_once == nil) then
+                do_once = false
+            end
             local direction = custom_properties["direction"]
             local question_count = custom_properties["question count"]
             local failure_message = custom_properties["failure message"]
@@ -46,6 +49,7 @@ local function getAllQuizSpawns()
 
             local trivia_answered_message = custom_properties["trivia pre-next message"]
             local trivia_mode = custom_properties['trivia mode']
+
             local trivia_welcome_message = custom_properties['trivia welcome message']
 
             bot_id = Net.create_bot({
@@ -86,8 +90,6 @@ local function do_quiz(player_id, quiz_bot)
         local len = #quiz_bot.bot_questions
         local player_pos = Net.get_player_position(player_id)
         local bot_pos = Net.get_bot_position(quiz_bot.bot_id)
-        local original_bot_direction = quiz_bot.direction
-        local player_scores = quiz_bot.player_scores
         Net.set_bot_direction(quiz_bot.bot_id, Direction.from_points(bot_pos, player_pos))
         quiz_bot.player_scores[player_id] = 0
         if (quiz_bot.trivia_mode == true) then
@@ -98,6 +100,7 @@ local function do_quiz(player_id, quiz_bot)
                     mugshot_texture, mugshot_animation
                 ))
             end
+
             local answers = 0
             for i, question in pairs(quiz_bot.bot_questions) do
                 local question_text = question.question
@@ -127,37 +130,27 @@ local function do_quiz(player_id, quiz_bot)
                 end
             end
 
-            if (answers == len) then
-                if (quiz_bot.complete_message == nil) then
-                    await(Async.message_player(player_id, default_complete_message, mugshot_texture,
+                if (quiz_bot.complete_message ~= nil) then
+                    await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture,
                         mugshot_animation))
-                    quiz_bot.is_complete[player_id] = true
                 end
-                if (quiz_bot.trivia_closing_statements ~= nil) then
-                    await(Async.message_player(player_id, quiz_bot.complete_message,
-                        mugshot_texture, mugshot_animation
-                    ))
-                end
-
-
-                await(Async.message_player(player_id, quiz_bot.complete_message, mugshot_texture, mugshot_animation))
+              
                 await(Async.message_player(player_id, "Here is your final score!",
                     mugshot_texture, mugshot_animation
                 ))
+                
                 await(Async.message_player(player_id, "SCORE : " .. tostring(quiz_bot.player_scores[player_id]),
                     mugshot_texture, mugshot_animation
                 ))
-                quiz_bot.is_complete[player_id] = true
                 return
-            end
         end
 
-        if ((quiz_bot.do_once ~= false and quiz_bot.is_complete[player_id] == nil) or quiz_bot.do_once ~= true) then
+        if ((quiz_bot.do_once ~= nil and quiz_bot.is_complete[player_id] == nil)) then
             local answers = 0
-            for i, question in pairs(quiz_bot.bot_questions) do
-                local question_text = question.question
-                local options = question.options
-                local correct_answer = question.answer
+            for i, q in pairs(quiz_bot.bot_questions) do
+                local question_text = q.question
+                local options = q.options
+                local correct_answer = q.answer
 
                 await(Async.message_player(player_id, question_text,
                     mugshot_texture, mugshot_animation
@@ -169,7 +162,7 @@ local function do_quiz(player_id, quiz_bot)
                     mugshot_texture,
                     mugshot_animation
                 ))
-                if result ~= correct_answer then
+                if result ~= tonumber(correct_answer) then
                     if (quiz_bot.failure_message == nil) then
                         await(Async.message_player(player_id, default_fail_message, mugshot_texture, mugshot_animation))
                         break
@@ -190,7 +183,8 @@ local function do_quiz(player_id, quiz_bot)
                 return
             end
         end
-        if (quiz_bot.is_complete[player_id] ~= nil) then
+        
+        if (quiz_bot.is_complete[player_id] == true) then
             if (quiz_bot.complete_message == nil) then
                 await(Async.message_player(player_id, default_complete_message, mugshot_texture, mugshot_animation))
                 return
@@ -204,7 +198,7 @@ local function do_quiz(player_id, quiz_bot)
 end
 
 Net:on("actor_interaction", function(event)
-    if (quiz_bots[event.actor_id] == nil) then return end
+    if (quiz_bots[event.actor_id].bot_id == nil) then return end
     local quiz_bot = quiz_bots[event.actor_id]
     do_quiz(event.player_id, quiz_bot)
 end)
