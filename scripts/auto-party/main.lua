@@ -36,14 +36,9 @@ Net:on("player_area_transfer", function(event)
   async(function()      
   local result =  await(Async.message_player(event.player_id, "Party is ready, Prepare to transfer to your Trivia Night Room. Your Host will be D3str0y3d255"))
     if (result ~= nil) then
-    Async.sleep(1)
     print(event.player_id)
     print(Party)
-
     print(partyArea)
-    -- startTriviaNight(Party, partyArea)
-    local player_id = event.player_id
-
     Net.lock_player_input(event.player_id)
     local spawn_objs = TblUtils.GetAllTiledObjOfXType(partyArea, "Player Spot")
     if (spawn_objs ~= nil) then
